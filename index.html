@@ -14,7 +14,7 @@
   </head>
   <body>
 
-  <div class="circle" id="distance"></div>
+  <main id="runs"></main>
 
   <script>
     var config = {
@@ -27,12 +27,18 @@
       }
     }
 
+    var runsContainer = document.getElementById('runs')
+
     contentful.createClient(config.contentful).getEntries({
       content_type: 'run',
       order: '-fields.date' // reverse order
     }).then(function (entries) {
       entries.items.forEach(function (item) {
-        render(item.fields, config.target)
+        render.distance(
+          runsContainer,
+          item.fields.distance,
+          config.target.distance
+        )
       })
     })
   </script>

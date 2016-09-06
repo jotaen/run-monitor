@@ -6,33 +6,33 @@ body {
 
 .circle {
   position: relative;
-  height: 10em;
-  width: 10em;
+  height: 8em;
+  width: 8em;
 }
 
 .circle-value {
   position: absolute;
-  top: 0.8em;
-  width: 95%;
+  top: 1em;
+  width: 85%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.75em;
   font-weight: bold;
 }
 
 .circle-value:after {
   position: absolute;
   content: 'km';
-  bottom: 1rem;
-  margin-left: 0.15rem;
-  font-size: 0.8rem;
+  bottom: 0.5em;
+  margin-left: 0.15em;
+  font-size: 0.5em;
 }
 
 .circle-label {
   position: absolute;
-  top: 5.25rem;
+  top: 3.25em;
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25em;
 }
 
 .circle-label:before {
