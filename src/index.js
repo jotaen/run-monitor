@@ -3,6 +3,7 @@
 const appendHeadline = require('./headline')
 const appendDistance = require('./distance')
 const appendIntensity = require('./intensity')
+const appendPace = require('./pace')
 const appendTime = require('./time')
 const runify = require('./runify')
 
@@ -22,15 +23,20 @@ window.appendRun = (elementId, run) => {
     run.distance,
     config.target.distance
   )
-  appendIntensity(
+  appendPace(
     runContainer,
-    run.intensity
+    run.pace,
+    run.targetPace
   )
   appendTime(
     runContainer,
     run.time,
     run.extrapolatedTime,
     config.target.time
+  )
+  appendIntensity(
+    runContainer,
+    run.intensity
   )
 }
 

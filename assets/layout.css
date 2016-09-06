@@ -128,3 +128,38 @@ body {
 .time-label:after {
   content: ')'
 }
+
+.pace-value {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: 90%;
+  text-align: center;
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+.pace-label {
+  position: absolute;
+  top: 4.75em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.pace-value:after {
+  position: absolute;
+  content: 'km/h';
+  bottom: 0.5em;
+  margin-left: 0.15em;
+  font-size: 0.5em;
+}
+
+.pace-label:before {
+  content: '('
+}
+
+.pace-label:after {
+  content: ')'
+}
