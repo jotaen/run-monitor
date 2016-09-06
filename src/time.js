@@ -14,12 +14,12 @@ module.exports = (domNode, actualTime, extrapolatedTime, targetTime) => {
 
   // Render Text
   const value = document.createElement('div')
-  value.setAttribute('class', 'time-value')
+  value.setAttribute('class', 'value time-value')
   value.innerText = timeString(actualTime)
   container.appendChild(value)
 
   const label = document.createElement('div')
-  label.setAttribute('class', 'time-label')
+  label.setAttribute('class', 'reference time-reference')
   label.innerText = timeString(extrapolatedTime)
   container.appendChild(label)
 
@@ -30,8 +30,8 @@ module.exports = (domNode, actualTime, extrapolatedTime, targetTime) => {
   container.appendChild(svg)
 
   const scale = new Plottable.Scales.Linear()
-  const colorScale = new Plottable.Scales.InterpolatedColor()
-  colorScale.range(['#ccc', '#3498db'])
+  const colorScale = new Plottable.Scales.Color()
+  colorScale.range(['#3498db', '#ccc'])
   const data = [
     Math.floor(actualTime*10),
     Math.floor((targetTime-actualTime)*10)

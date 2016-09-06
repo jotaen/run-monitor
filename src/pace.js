@@ -15,12 +15,12 @@ module.exports = (domNode, actualPace, targetPace) => {
 
   // Render Text
   const value = document.createElement('div')
-  value.setAttribute('class', 'pace-value')
+  value.setAttribute('class', 'value pace-value')
   value.innerText = actualPace.toFixed(2)
   container.appendChild(value)
 
   const label = document.createElement('div')
-  label.setAttribute('class', 'pace-label')
+  label.setAttribute('class', 'reference pace-reference')
   label.innerText = targetPace.toFixed(2)
   container.appendChild(label)
 

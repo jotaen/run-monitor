@@ -5,12 +5,12 @@ module.exports = (domNode, intensity) => {
 
   // Setup Container
   const container = document.createElement('div')
-  container.setAttribute('class', 'widget bar')
+  container.setAttribute('class', 'widget intensity')
   domNode.appendChild(container)
 
   // Render Text
   const value = document.createElement('div')
-  value.setAttribute('class', 'bar-value')
+  value.setAttribute('class', 'value intensity-value')
   value.innerText = percentage
   container.appendChild(value)
 

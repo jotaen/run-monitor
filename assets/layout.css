@@ -40,17 +40,35 @@ body {
   border-right: 0;
 }
 
-.circle-value {
+.value {
   position: absolute;
-  top: 1em;
-  left: 0;
-  width: 93%;
   text-align: center;
   font-size: 1.75em;
   font-weight: bold;
 }
 
-.circle-value:after {
+.reference {
+  position: absolute;
+  text-align: center;
+  font-size: 1.25em;
+  width: 100%;
+}
+
+.reference:before {
+  content: '(';
+}
+
+.reference:after {
+  content: ')';
+}
+
+.distance-value {
+  top: 1em;
+  left: 0;
+  width: 93%;
+}
+
+.distance-value:after {
   position: absolute;
   content: 'km';
   bottom: 0.5em;
@@ -58,49 +76,29 @@ body {
   font-size: 0.5em;
 }
 
-.circle-label {
-  position: absolute;
+.distance-reference {
   top: 3.25em;
   left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.25em;
 }
 
-.circle-label:before {
-  content: '(';
-}
-
-.circle-label:after {
-  content: ')';
-}
-
-.bar {
+.intensity {
   padding-top: 1.5em;
 }
 
-.bar-value {
-  position: absolute;
+.intensity-value {
   top: 2.5em;
   left: 0;
   width: 100%;
-  text-align: center;
-  font-size: 1.75em;
-  font-weight: bold;
 }
 
-.bar-value:after {
+.intensity-value:after {
   content: '%';
 }
 
 .time-value {
-  position: absolute;
   top: 1.75em;
   left: 0;
   width: 97%;
-  text-align: center;
-  font-size: 1.75em;
-  font-weight: bold;
   color: #fff;
 }
 
@@ -112,40 +110,15 @@ body {
   font-size: 0.5em;
 }
 
-.time-label {
-  position: absolute;
+.time-reference {
   top: 5em;
   left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.25em;
-}
-
-.time-label:before {
-  content: '('
-}
-
-.time-label:after {
-  content: ')'
 }
 
 .pace-value {
-  position: absolute;
   top: 2em;
   left: 0;
   width: 90%;
-  text-align: center;
-  font-size: 1.75em;
-  font-weight: bold;
-}
-
-.pace-label {
-  position: absolute;
-  top: 4.75em;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.25em;
 }
 
 .pace-value:after {
@@ -156,10 +129,7 @@ body {
   font-size: 0.5em;
 }
 
-.pace-label:before {
-  content: '('
-}
-
-.pace-label:after {
-  content: ')'
+.pace-reference {
+  top: 4.75em;
+  left: 0;
 }

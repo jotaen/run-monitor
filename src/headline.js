@@ -9,6 +9,10 @@ module.exports = (domNode, date, route) => {
   dateString += date.toLocaleDateString('en-US', {day: 'numeric'})
   dateString += '. '
   dateString += date.toLocaleDateString('en-US', {month: 'long'})
+  dateString += ' – '
+  dateString += date.getHours()
+  dateString += ':'
+  dateString += ('0' + date.getMinutes()).substr(-2)
   h1.innerText = dateString
   domNode.appendChild(h1)
 
