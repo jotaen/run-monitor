@@ -7,7 +7,7 @@ const appendPace = require('./pace')
 const appendTime = require('./time')
 const runify = require('./runify')
 
-window.appendRun = (elementId, run) => {
+window.appendRun = (elementId, run, target) => {
   const allRunsContainer = document.getElementById('runs')
   const runContainer = document.createElement('div')
   runContainer.setAttribute('class', 'run')
@@ -21,7 +21,7 @@ window.appendRun = (elementId, run) => {
   appendDistance(
     runContainer,
     run.distance,
-    config.target.distance
+    target.distance
   )
   appendPace(
     runContainer,
@@ -32,7 +32,7 @@ window.appendRun = (elementId, run) => {
     runContainer,
     run.time,
     run.extrapolatedTime,
-    config.target.time
+    target.time
   )
   appendIntensity(
     runContainer,

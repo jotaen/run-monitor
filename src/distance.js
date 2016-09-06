@@ -27,8 +27,8 @@ module.exports = (domNode, actualDistance, targetDistance) => {
   const colorScale = new Plottable.Scales.Color()
   colorScale.range(['#1abc9c', '#e74c3c'])
   const data = [
-    Math.floor(actualDistance*10),
-    Math.floor((targetDistance-actualDistance)*10)
+    Math.floor(actualDistance * 10),
+    Math.floor((targetDistance - actualDistance) * 10)
   ]
 
   const plot = new Plottable.Plots.Pie()

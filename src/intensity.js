@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (domNode, intensity) => {
-  const percentage = Math.ceil(intensity*100)
+  const percentage = Math.ceil(intensity * 100)
 
   // Setup Container
   const container = document.createElement('div')

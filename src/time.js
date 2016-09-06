@@ -33,8 +33,8 @@ module.exports = (domNode, actualTime, extrapolatedTime, targetTime) => {
   const colorScale = new Plottable.Scales.Color()
   colorScale.range(['#3498db', '#ccc'])
   const data = [
-    Math.floor(actualTime*10),
-    Math.floor((targetTime-actualTime)*10)
+    Math.floor(actualTime * 10),
+    Math.floor((targetTime - actualTime) * 10)
   ]
 
   const plot = new Plottable.Plots.Pie()

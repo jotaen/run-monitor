@@ -38,7 +38,7 @@
       entries.items.map(function (item) {
         return runify(item, config.target)
       }).forEach(function (run) {
-        appendRun('runs', run)
+        appendRun('runs', run, config.target)
       })
     })
   </script>
