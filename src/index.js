@@ -1,8 +1,9 @@
 'use strict'
 
+const appendHeadline = require('./headline')
 const appendDistance = require('./distance')
 const appendIntensity = require('./intensity')
-const appendHeadline = require('./headline')
+const appendTime = require('./time')
 const runify = require('./runify')
 
 window.appendRun = (elementId, run) => {
@@ -24,6 +25,12 @@ window.appendRun = (elementId, run) => {
   appendIntensity(
     runContainer,
     run.intensity
+  )
+  appendTime(
+    runContainer,
+    run.time,
+    run.extrapolatedTime,
+    config.target.time
   )
 }
 

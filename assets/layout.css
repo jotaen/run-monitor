@@ -92,3 +92,39 @@ body {
 .bar-value:after {
   content: '%';
 }
+
+.time-value {
+  position: absolute;
+  top: 1.75em;
+  left: 0;
+  width: 97%;
+  text-align: center;
+  font-size: 1.75em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.time-value:after {
+  position: absolute;
+  content: 'h';
+  bottom: 0.5em;
+  margin-left: 0.15em;
+  font-size: 0.5em;
+}
+
+.time-label {
+  position: absolute;
+  top: 5em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.time-label:before {
+  content: '('
+}
+
+.time-label:after {
+  content: ')'
+}

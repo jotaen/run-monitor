@@ -23,8 +23,8 @@
         accessToken: '2edae343b5279c84248ad8be38f9ce5f0e3e6513483d75d40bcb9c51f1afcaeb'
       },
       target: {
-        distance: 21.1,
-        pace: 10.6
+        distance: 21.1, // km
+        time: 120 // min
       }
     }
 
@@ -32,7 +32,9 @@
       content_type: 'run',
       order: '-fields.date' // reverse order
     }).then(function (entries) {
-      entries.items.map(runify).forEach(function (run) {
+      entries.items.map(function (item) {
+        return runify(item, config.target)
+      }).forEach(function (run) {
         appendRun('runs', run)
       })
     })
