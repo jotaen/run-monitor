@@ -10,25 +10,30 @@
     <script src="https://npmcdn.com/contentful@3.5.0/browser-dist/contentful.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plottable.js/2.2.0/plottable.js"></script>
-    <script src="assets/run.js"></script>
+    <script src="assets/render.js"></script>
   </head>
   <body>
 
   <div class="circle" id="distance"></div>
 
   <script>
-    const config = {
+    var config = {
       contentful: {
         space: 'p327c0m8jkw0',
         accessToken: '2edae343b5279c84248ad8be38f9ce5f0e3e6513483d75d40bcb9c51f1afcaeb'
+      },
+      target: {
+        distance: 21.1
       }
     }
 
     contentful.createClient(config.contentful).getEntries({
       content_type: 'run',
       order: '-fields.date' // reverse order
-    }).then((entries) => {
-      run.createWidget.distance('distance', 'circle', 12.5, 21.1)
+    }).then(function (entries) {
+      entries.items.forEach(function (item) {
+        render(item.fields, config.target)
+      })
     })
   </script>
   </body>

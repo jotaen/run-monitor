@@ -18,7 +18,7 @@ exports.distance = (elementId, cssPrefix, actualDistance, targetDistance) => {
   const plot = new Plottable.Plots.Pie()
     .addDataset(new Plottable.Dataset(data))
     .sectorValue((value) => value, scale)
-    .innerRadius(115, scale)
+    .innerRadius(120, scale)
     .attr('fill', (value) => value, colorScale)
     .renderTo('svg#' + svgId)
 
