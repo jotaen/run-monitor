@@ -1,8 +1,8 @@
 {
   "scripts": {
     "test": "mocha",
-    "bundler": "browserify src/index.js --s render -o assets/render.js -t  [ babelify --presets [ es2015-script ] ]",
-    "bundler:watch": "watchify src/index.js --s render -o assets/render.js -t  [ babelify --presets [ es2015-script ] ]"
+    "bundler": "browserify src/index.js -o assets/bundle.js -t  [ babelify --presets [ es2015-script ] ]",
+    "bundler:watch": "watchify src/index.js -o assets/bundle.js -t  [ babelify --presets [ es2015-script ] ]"
   },
   "license": "MIT",
   "devDependencies": {
