@@ -170,6 +170,11 @@ body {
   left: 0;
 }
 
+.time-reference:before {
+  content: '🏁';
+  margin-right: 5px;
+}
+
 .time-reference:after {
   content: 'h';
   margin-left: 2px;
