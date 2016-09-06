@@ -4,6 +4,37 @@ body {
   background-color: #eff5f9;
 }
 
+.topbar {
+  height: 2.5em;
+  background-color: #2c3e50;
+}
+
+.logo {
+  font-size: 1.75em;
+  font-weight: 900;
+  text-align: center;
+}
+
+.logo:before {
+  content: '•';
+  margin-right: 0.5em;
+  color: #7f8c8d;
+}
+
+.logo:after {
+  content: '•';
+  margin-left: 0.5em;
+  color: #7f8c8d;
+}
+
+.yellow {
+  color: #f1c40f;
+}
+
+.white {
+  color: #ecf0f1;
+}
+
 .run {
   padding: 1em 1em 2em 2em;
   border-bottom: 1px solid #ccc;
@@ -18,12 +49,14 @@ body {
 .date {
   font-size: 1.4em;
   margin: 0;
+  font-weight: 600;
 }
 
 .route {
   font-size: 1em;
   color: #888;
   margin-top: 0;
+  font-weight: 400;
 }
 
 .widget {
@@ -44,7 +77,7 @@ body {
   position: absolute;
   text-align: center;
   font-size: 1.75em;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .reference {
@@ -52,33 +85,32 @@ body {
   text-align: center;
   font-size: 1.25em;
   width: 100%;
-}
-
-.reference:before {
-  content: '(';
-}
-
-.reference:after {
-  content: ')';
+  font-weight: 200;
 }
 
 .distance-value {
   top: 1em;
   left: 0;
-  width: 93%;
+  width: 100%;
 }
 
 .distance-value:after {
-  position: absolute;
   content: 'km';
-  bottom: 0.5em;
   margin-left: 0.15em;
   font-size: 0.5em;
+  font-weight: 200;
 }
 
 .distance-reference {
   top: 3.25em;
   left: 0;
+}
+
+.distance-reference:after {
+  content: 'km';
+  margin-left: 0.15em;
+  font-size: 0.6em;
+  font-weight: 200;
 }
 
 .intensity {
@@ -98,16 +130,15 @@ body {
 .time-value {
   top: 1.75em;
   left: 0;
-  width: 97%;
+  width: 100%;
   color: #fff;
 }
 
 .time-value:after {
-  position: absolute;
   content: 'h';
-  bottom: 0.5em;
   margin-left: 0.15em;
   font-size: 0.5em;
+  font-weight: 200;
 }
 
 .time-reference {
@@ -115,21 +146,35 @@ body {
   left: 0;
 }
 
+.time-reference:after {
+  content: 'h';
+  margin-left: 0.15em;
+  font-size: 0.6em;
+  font-weight: 200;
+}
+
+
 .pace-value {
   top: 2em;
   left: 0;
-  width: 90%;
+  width: 100%;
 }
 
 .pace-value:after {
-  position: absolute;
   content: 'km/h';
-  bottom: 0.5em;
   margin-left: 0.15em;
   font-size: 0.5em;
+  font-weight: 200;
 }
 
 .pace-reference {
   top: 4.75em;
   left: 0;
+}
+
+.pace-reference:after {
+  content: 'km/h';
+  margin-left: 0.15em;
+  font-size: 0.6em;
+  font-weight: 200;
 }
