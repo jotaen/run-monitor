@@ -4,18 +4,47 @@ body {
   background-color: #eff5f9;
 }
 
+.run {
+  padding: 1em 1em 2em 2em;
+  border-bottom: 1px solid #ccc;
+  clear: both;
+  overflow: auto;
+}
+
+.run:last-child {
+  border-bottom: none;
+}
+
+.date {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.route {
+  font-size: 1em;
+  color: #888;
+  margin-top: 0;
+}
+
 .widget {
   position: relative;
+  box-sizing: border-box;
   height: 8em;
-  width: 8em;
+  width: 14em;
   float: left;
-  margin: 1em;
+  padding: 0 3em;
+  border-right: 1px solid #ccc;
+}
+
+.widget:last-child {
+  border-right: 0;
 }
 
 .circle-value {
   position: absolute;
   top: 1em;
-  width: 85%;
+  left: 0;
+  width: 93%;
   text-align: center;
   font-size: 1.75em;
   font-weight: bold;
@@ -32,6 +61,7 @@ body {
 .circle-label {
   position: absolute;
   top: 3.25em;
+  left: 0;
   width: 100%;
   text-align: center;
   font-size: 1.25em;
@@ -52,6 +82,7 @@ body {
 .bar-value {
   position: absolute;
   top: 2.5em;
+  left: 0;
   width: 100%;
   text-align: center;
   font-size: 1.75em;

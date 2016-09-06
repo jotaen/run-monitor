@@ -28,31 +28,12 @@
       }
     }
 
-    var runsContainer = document.getElementById('runs')
-
-    var calculateIntensity = function (distance, pace) {
-      return distance * Math.pow(pace, 3) / 1000
-    }
-
     contentful.createClient(config.contentful).getEntries({
       content_type: 'run',
       order: '-fields.date' // reverse order
     }).then(function (entries) {
-      entries.items.map(function (item) {
-        const run = item.fields
-        run.pace = run.distance / run.time * 60
-        run.intensity = calculateIntensity(run.distance, run.pace) / calculateIntensity(config.target.distance, config.target.pace)
-        return run
-      }).forEach(function (run) {
-        render.distance(
-          runsContainer,
-          run.distance,
-          config.target.distance
-        )
-        render.intensity(
-          runsContainer,
-          run.intensity
-        )
+      entries.items.map(runify).forEach(function (run) {
+        appendRun('runs', run)
       })
     })
   </script>
