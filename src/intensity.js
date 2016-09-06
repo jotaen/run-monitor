@@ -20,7 +20,8 @@ module.exports = (domNode, intensity) => {
     'width: 100%',
     'background-color: #e6dcea',
     'border: 0.15em solid #9b59b6',
-    'height: 2em'
+    'height: 32px',
+    'margin-top: 12px'
   ].join(';'))
   container.appendChild(progressBar)
 

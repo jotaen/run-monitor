@@ -1,8 +1,9 @@
 'use strict'
 
 const markerPosition = (actualPace, targetPace) => {
-  const rangeMin = targetPace / 2
-  const length = rangeMin * 2
+  const rangeMin = targetPace * 0.7
+  const offset = targetPace - rangeMin
+  const length = offset * 2
   const scaledActualPace = actualPace - rangeMin
   return scaledActualPace / length * 100
 }
@@ -30,8 +31,8 @@ module.exports = (domNode, actualPace, targetPace) => {
     'width: 100%',
     'position: relative',
     'background-color: #7f8c8d',
-    'height: 0.5em',
-    'margin-top: 2em'
+    'height: 8px',
+    'margin-top: 32px'
   ].join(';'))
   container.appendChild(scale)
 
@@ -42,21 +43,21 @@ module.exports = (domNode, actualPace, targetPace) => {
     'left: 48%',
     'width: 6%',
     'background-color: #7f8c8d',
-    'height: 1.1em'
+    'height: 18px'
   ].join(';'))
   scale.appendChild(middleMarker)
 
   const currentMarker = document.createElement('div')
   currentMarker.setAttribute('style', [
     'position: absolute',
-    'top: -1em',
+    'top: -16px',
     'left: ' + markerPosition(actualPace, targetPace) + '%',
     'width: 0',
     'height: 0',
-    'margin-left: -0.4em',
-    'border-left: 0.5em solid transparent',
-    'border-right: 0.5em solid transparent',
-    'border-top: 1em solid #be643c'
+    'margin-left: -8px',
+    'border-left: 8px solid transparent',
+    'border-right: 8px solid transparent',
+    'border-top: 16px solid #be643c'
   ].join(';'))
   scale.appendChild(currentMarker)
 }
