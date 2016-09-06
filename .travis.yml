@@ -1,12 +1,15 @@
 language: node_js
+script: npm run linter
 node_js:
   - "6.0"
 
 after_success:
-  - npm run bundle
+  - npm run bundler
 
 addons:
   artifacts:
     paths:
       - ./index.html
       - $(ls ./assets/* | tr "\n" ":")
+    target_paths:
+      - /
