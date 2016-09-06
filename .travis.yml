@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "6.0"
+
+after_success:
+  - npm run bundle
+
+addons:
+  artifacts:
+    paths:
+      - ./index.html
+      - $(ls ./assets/* | tr "\n" ":")
