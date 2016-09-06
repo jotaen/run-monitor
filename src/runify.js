@@ -1,13 +1,18 @@
 'use strict'
 
 const intensity = function (distance, pace) {
-  return distance * Math.pow(pace, 3) / 1000
+  return distance * Math.pow(pace, 2) / 100
 }
 
-module.exports = (item) => {
+module.exports = (item, target) => {
+  const targetPace = target.distance / (target.time / 60)
+  const targetIntensity = intensity(target.distance, targetPace)
+
   const run = item.fields
   run.date = new Date(run.date)
   run.pace = run.distance / run.time * 60
-  run.intensity = intensity(run.distance, run.pace) / intensity(config.target.distance, config.target.pace)
+  run.targetPace = targetPace
+  run.intensity = intensity(run.distance, run.pace) / targetIntensity
+  run.extrapolatedTime = target.distance / run.pace * 60
   return run
 }
