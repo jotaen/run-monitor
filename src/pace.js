@@ -1,11 +1,26 @@
 'use strict'
 
 const markerPosition = (actualPace, targetPace) => {
-  const rangeMin = targetPace * 0.7
-  const offset = targetPace - rangeMin
-  const length = offset * 2
-  const scaledActualPace = actualPace - rangeMin
-  return scaledActualPace / length * 100
+  const factor = 0.6
+  const scaledActualPace = actualPace * factor
+  const scaledTargetPace = targetPace * factor
+  const middle = scaledActualPace - scaledTargetPace
+  return 90 * 2.5 * middle / scaledTargetPace
+}
+
+const tick = (degrees) => {
+  const marker = document.createElement('div')
+  marker.setAttribute('style', [
+    'position: absolute',
+    'bottom: -1px',
+    'left: 55px',
+    'height: 50px',
+    'width: 2px',
+    'border-top: 8px solid #bbb',
+    'transform-origin: bottom',
+    'transform: rotate(' + degrees + 'deg)'
+  ].join(';'))
+  return marker
 }
 
 module.exports = (domNode, actualPace, targetPace) => {
@@ -25,39 +40,50 @@ module.exports = (domNode, actualPace, targetPace) => {
   label.innerText = targetPace.toFixed(2)
   container.appendChild(label)
 
-  // Render Bar
-  const scale = document.createElement('div')
-  scale.setAttribute('style', [
-    'width: 100%',
+  // Render Gauge
+  const dashboard = document.createElement('div')
+  dashboard.setAttribute('style', [
     'position: relative',
-    'background-color: #7f8c8d',
-    'height: 8px',
-    'margin-top: 32px'
+    'height: 56px',
+    'width: 112px',
+    'border-radius: 90px 90px 0 0',
+    'border: 3px solid #bbb',
+    'background: #e6e6e6'
   ].join(';'))
-  container.appendChild(scale)
+  container.appendChild(dashboard)
 
-  const middleMarker = document.createElement('div')
-  middleMarker.setAttribute('style', [
+  dashboard.appendChild(tick(-60))
+  dashboard.appendChild(tick(-30))
+  dashboard.appendChild(tick(0))
+  dashboard.appendChild(tick(30))
+  dashboard.appendChild(tick(60))
+
+  const pointer = document.createElement('div')
+  pointer.setAttribute('style', [
     'position: absolute',
-    'top: 0',
-    'left: 48%',
-    'width: 6%',
-    'background-color: #7f8c8d',
-    'height: 18px'
+    'left: 54px',
+    'right: 0',
+    'bottom: -2px',
+    'border-radius: 2px',
+    'background-color: #be643c',
+    'width: 3px',
+    'height: 52px',
+    'transform-origin: bottom',
+    'transform: rotate(' + Math.round(markerPosition(actualPace, targetPace)) + 'deg)'
   ].join(';'))
-  scale.appendChild(middleMarker)
+  dashboard.appendChild(pointer)
 
-  const currentMarker = document.createElement('div')
-  currentMarker.setAttribute('style', [
+  const arrow = document.createElement('div')
+  arrow.setAttribute('style', [
     'position: absolute',
-    'top: -16px',
-    'left: ' + markerPosition(actualPace, targetPace) + '%',
+    'top: -6px',
+    'left: 2px',
     'width: 0',
     'height: 0',
     'margin-left: -8px',
     'border-left: 8px solid transparent',
     'border-right: 8px solid transparent',
-    'border-top: 16px solid #be643c'
+    'border-bottom: 16px solid #be643c'
   ].join(';'))
-  scale.appendChild(currentMarker)
+  pointer.appendChild(arrow)
 }

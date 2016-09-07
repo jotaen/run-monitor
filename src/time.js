@@ -18,10 +18,15 @@ module.exports = (domNode, actualTime, extrapolatedTime, targetTime) => {
   value.innerText = timeString(actualTime)
   container.appendChild(value)
 
-  const label = document.createElement('div')
-  label.setAttribute('class', 'reference time-reference')
-  label.innerText = timeString(extrapolatedTime)
-  container.appendChild(label)
+  const reference = document.createElement('div')
+  reference.setAttribute('class', 'reference time-reference')
+  reference.innerText = timeString(targetTime)
+  container.appendChild(reference)
+
+  const extrapolated = document.createElement('div')
+  extrapolated.setAttribute('class', 'reference time-extrapolated')
+  extrapolated.innerText = timeString(extrapolatedTime)
+  container.appendChild(extrapolated)
 
   // Render SVG
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')

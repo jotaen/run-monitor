@@ -166,13 +166,9 @@ body {
 }
 
 .time-reference {
-  top: 88px;
+  top: 95px;
   left: 0;
-}
-
-.time-reference:before {
-  content: '🏁';
-  margin-right: 5px;
+  width: 50%;
 }
 
 .time-reference:after {
@@ -182,8 +178,27 @@ body {
   font-weight: 200;
 }
 
+.time-extrapolated {
+  top: 95px;
+  left: 50%;
+  width: 50%;
+  font-weight: 400;
+}
+
+.time-extrapolated:before {
+  content: '🏁';
+  margin-right: 4px;
+}
+
+.time-extrapolated:after {
+  content: 'h';
+  margin-left: 2px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
 .pace-value {
-  top: 40px;
+  top: 50px;
   left: 0;
   width: 100%;
 }
@@ -196,7 +211,7 @@ body {
 }
 
 .pace-reference {
-  top: 80px;
+  top: 90px;
   left: 0;
 }
 
