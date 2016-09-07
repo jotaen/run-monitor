@@ -1,6 +1,7 @@
 {
   "scripts": {
     "test": "mocha",
+    "pretest": "npm run linter",
     "linter": "eslint .",
     "bundler": "browserify src/index.js -o assets/bundle.js -t  [ babelify --presets [ es2015-script ] ]",
     "bundler:watch": "watchify src/index.js -o assets/bundle.js -t  [ babelify --presets [ es2015-script ] ]"
