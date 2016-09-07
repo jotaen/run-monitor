@@ -35,10 +35,10 @@ module.exports = (domNode, actualPace, targetPace) => {
   value.innerText = actualPace.toFixed(2)
   container.appendChild(value)
 
-  const label = document.createElement('div')
-  label.setAttribute('class', 'reference pace-reference')
-  label.innerText = targetPace.toFixed(2)
-  container.appendChild(label)
+  const reference = document.createElement('div')
+  reference.setAttribute('class', 'reference pace-reference')
+  reference.innerText = targetPace.toFixed(2)
+  container.appendChild(reference)
 
   // Render Gauge
   const dashboard = document.createElement('div')

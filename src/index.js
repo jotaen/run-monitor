@@ -12,31 +12,11 @@ window.appendRun = (allRunsContainer, run, target) => {
   runContainer.setAttribute('class', 'run')
   allRunsContainer.appendChild(runContainer)
 
-  appendHeadline(
-    runContainer,
-    run.date,
-    run.route
-  )
-  appendDistance(
-    runContainer,
-    run.distance,
-    target.distance
-  )
-  appendPace(
-    runContainer,
-    run.pace,
-    run.targetPace
-  )
-  appendTime(
-    runContainer,
-    run.time,
-    run.extrapolatedTime,
-    target.time
-  )
-  appendIntensity(
-    runContainer,
-    run.intensity
-  )
+  appendHeadline(runContainer, run.date, run.route)
+  appendDistance(runContainer, run.distance, target.distance)
+  appendPace(runContainer, run.pace, run.targetPace)
+  appendTime(runContainer, run.time, run.extrapolatedTime, target.time)
+  appendIntensity(runContainer, run.intensity)
 }
 
 window.runify = runify

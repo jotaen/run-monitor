@@ -42,7 +42,7 @@
         content_type: 'run',
         order: '-fields.date' // reverse order
       }).then(function (entries) {
-        const runsElement = document.getElementById('runs')
+        var runsElement = document.getElementById('runs')
         runsElement.innerHTML = ''
         entries.items.map(function (item) {
           return runify(item, config.target)
