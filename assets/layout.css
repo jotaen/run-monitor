@@ -73,28 +73,6 @@ body {
   padding: 16px 48px;
 }
 
-@media (min-width: 494px) and (max-width: 719px) {
-  .widget:nth-child(odd) {
-    border-right: 1px solid #ccc;
-  }
-}
-
-@media (min-width: 720px) and (max-width: 943px) {
-  .widget:nth-child(-n+4) {
-    border-right: 1px solid #ccc;
-  }
-}
-
-@media (min-width: 944px) {
-  .widget {
-    border-right: 1px solid #ccc;
-  }
-}
-
-.widget:last-child {
-  border-right: 0;
-}
-
 .value {
   position: absolute;
   text-align: center;
@@ -169,6 +147,9 @@ body {
   top: 95px;
   left: 0;
   width: 50%;
+  text-align: right;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
 .time-reference:after {
@@ -198,7 +179,7 @@ body {
 }
 
 .pace-value {
-  top: 50px;
+  top: 55px;
   left: 0;
   width: 100%;
 }
@@ -211,7 +192,7 @@ body {
 }
 
 .pace-reference {
-  top: 90px;
+  top: 95px;
   left: 0;
 }
 
