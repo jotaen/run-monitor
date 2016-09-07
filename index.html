@@ -37,18 +37,20 @@
       }
     }
 
-    contentful.createClient(config.contentful).getEntries({
-      content_type: 'run',
-      order: '-fields.date' // reverse order
-    }).then(function (entries) {
-      const runsElement = document.getElementById('runs')
-      runsElement.innerHTML = ''
-      entries.items.map(function (item) {
-        return runify(item, config.target)
-      }).forEach(function (run) {
-        appendRun(runsElement, run, config.target)
+    window.onload = function () {
+      contentful.createClient(config.contentful).getEntries({
+        content_type: 'run',
+        order: '-fields.date' // reverse order
+      }).then(function (entries) {
+        const runsElement = document.getElementById('runs')
+        runsElement.innerHTML = ''
+        entries.items.map(function (item) {
+          return runify(item, config.target)
+        }).forEach(function (run) {
+          appendRun(runsElement, run, config.target)
+        })
       })
-    })
+    }
   </script>
   </body>
 </html>
