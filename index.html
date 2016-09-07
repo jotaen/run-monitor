@@ -17,7 +17,13 @@
   <header class="topbar">
     <div class="logo"><span class="yellow">Run</span><span class="white">Monitor</span></div>
   </header>
-  <main id="runs"></main>
+  <main id="runs">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      <p>Loading...</p>
+    </div>
+  </main>
 
   <script>
     var config = {
@@ -35,10 +41,12 @@
       content_type: 'run',
       order: '-fields.date' // reverse order
     }).then(function (entries) {
+      const runsElement = document.getElementById('runs')
+      runsElement.innerHTML = ''
       entries.items.map(function (item) {
         return runify(item, config.target)
       }).forEach(function (run) {
-        appendRun('runs', run, config.target)
+        appendRun(runsElement, run, config.target)
       })
     })
   </script>

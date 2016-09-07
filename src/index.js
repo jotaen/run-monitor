@@ -7,8 +7,7 @@ const appendPace = require('./pace')
 const appendTime = require('./time')
 const runify = require('./runify')
 
-window.appendRun = (elementId, run, target) => {
-  const allRunsContainer = document.getElementById('runs')
+window.appendRun = (allRunsContainer, run, target) => {
   const runContainer = document.createElement('div')
   runContainer.setAttribute('class', 'run')
   allRunsContainer.appendChild(runContainer)
