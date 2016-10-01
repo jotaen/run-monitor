@@ -10,6 +10,7 @@ module.exports = (domNode, actualTime, extrapolatedTime, targetTime) => {
   // Setup Container
   const container = document.createElement('div')
   container.setAttribute('class', 'widget time')
+  container.setAttribute('title', 'Time')
   domNode.appendChild(container)
 
   // Render Text

@@ -4,6 +4,7 @@ module.exports = (domNode, actualDistance, targetDistance) => {
   // Setup Container
   const container = document.createElement('div')
   container.setAttribute('class', 'widget distance')
+  container.setAttribute('title', 'Distance')
   domNode.appendChild(container)
 
   // Render Text

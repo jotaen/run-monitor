@@ -27,6 +27,7 @@ module.exports = (domNode, actualPace, targetPace) => {
   // Setup Container
   const container = document.createElement('div')
   container.setAttribute('class', 'widget pace')
+  container.setAttribute('title', 'Pace')
   domNode.appendChild(container)
 
   // Render Text

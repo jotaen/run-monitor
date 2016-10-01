@@ -6,6 +6,7 @@ module.exports = (domNode, intensity) => {
   // Setup Container
   const container = document.createElement('div')
   container.setAttribute('class', 'widget intensity')
+  container.setAttribute('title', 'Intensity')
   domNode.appendChild(container)
 
   // Render Text
