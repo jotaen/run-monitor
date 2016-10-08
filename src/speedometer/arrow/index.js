@@ -1,6 +1,7 @@
 'use strict'
 
-const React = require('react')
+import React from 'react'
+require('./arrow.scss')
 
 const Arrow = ({rotation}) => {
   const strokeStyle = {
@@ -37,9 +38,9 @@ const Arrow = ({rotation}) => {
     backgroundColor: '#2c3e50'
   }
   return (
-    <div style={strokeStyle}>
-      <div style={tipStyle}></div>
-      <div style={dotStyle}></div>
+    <div style={strokeStyle} className="arrow">
+      <div style={tipStyle} className=""></div>
+      <div style={dotStyle} className=""></div>
     </div>
   )
 }
