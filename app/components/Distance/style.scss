@@ -1,0 +1,37 @@
+@import '../../style.scss';
+
+.donut {
+  width: 128px;
+  height: 128px;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+}
+
+.donut__ground {
+  fill: transparent;
+  stroke: $red;
+  stroke-width: 9;
+}
+
+.donut__fill {
+  fill: transparent;
+  stroke: $green-pastell;
+  stroke-width: 9;
+}
+
+.label__distance:after {
+  content: 'km';
+  margin-left: 2px;
+  font-size: 0.6em;
+  font-weight: 200;
+}
+
+.label__distance--actual {
+  z-index: 999;
+  top: 32px;
+}
+
+.label__distance--target {
+  z-index: 999;
+  top: 68px;
+}
