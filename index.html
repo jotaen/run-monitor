@@ -4,57 +4,10 @@
     <meta charset="utf-8">
     <title>Half Marathon Training Monitor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plottable.js/2.2.0/plottable.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:200,400,600,900" rel="stylesheet">
-    <link rel="stylesheet" href="assets/layout.css" media="screen">
-    <script src="https://npmcdn.com/contentful@3.5.0/browser-dist/contentful.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/plottable.js/2.2.0/plottable.js"></script>
-    <script src="assets/bundle.js"></script>
   </head>
   <body>
-
-  <header class="topbar">
-    <div class="logo"><span class="yellow">Run</span><span class="white">Monitor</span></div>
-    <div class="info">
-      <a href="http://jotaen.net/oBPhB/run-monitor">What is this?</a>
-      <a href="https://github.com/jotaen/run-monitor">Github</a>
-    </div>
-  </header>
-  <main id="runs">
-    <div class="spinner">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-      <p>Loading...</p>
-    </div>
-  </main>
-
-  <script>
-    var config = {
-      contentful: {
-        space: 'p327c0m8jkw0',
-        accessToken: '2edae343b5279c84248ad8be38f9ce5f0e3e6513483d75d40bcb9c51f1afcaeb'
-      },
-      target: {
-        distance: 21.1, // km
-        time: 120 // min
-      }
-    }
-
-    window.onload = function () {
-      contentful.createClient(config.contentful).getEntries({
-        content_type: 'run',
-        order: '-fields.date' // reverse order
-      }).then(function (entries) {
-        var runsElement = document.getElementById('runs')
-        runsElement.innerHTML = ''
-        entries.items.map(function (item) {
-          return runify(item, config.target)
-        }).forEach(function (run) {
-          appendRun(runsElement, run, config.target)
-        })
-      })
-    }
-  </script>
+    <div id="app"></div>
+    <script src="assets/bundle.js"></script>
   </body>
 </html>

@@ -1,0 +1,44 @@
+@import '../../style.scss';
+
+.pie {
+  width: 93px;
+  height: 93px;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+}
+
+.pie__fill {
+  fill: $gray-medium;
+  stroke: $blue;
+  stroke-width: 32;
+}
+
+.label__time:after {
+  content: 'h';
+  margin-left: 2px;
+  font-size: 0.6em;
+  font-weight: 200;
+}
+
+.label__time--actual {
+  z-index: 999;
+  color: #fff;
+  top: 45px;
+}
+
+.label__time--target {
+  z-index: 999;
+  top: 100px;
+  text-align: left;
+}
+
+.label__time--estimated {
+  z-index: 999;
+  top: 100px;
+  text-align: right;
+  font-weight: 400;
+}
+.label__time--estimated:before {
+  content: '🏁';
+  margin-right: 4px;
+}

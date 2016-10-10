@@ -4,7 +4,7 @@ node_js:
   - "6.0"
 
 after_success:
-  - npm run bundler
+  - npm run bundler:prod
 
 addons:
   artifacts:

@@ -1,6 +1,3 @@
 {
-  "extends": "standard",
-  "globals": {
-    "Plottable": true
-  }
+  "extends": ["standard", "standard-react"]
 }
