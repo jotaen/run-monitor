@@ -21,7 +21,7 @@ class Page extends React.Component {
 
   mainBlock () {
     if (this.state && this.state.runs) {
-      return <Run run={this.state.runs} />
+      return this.state.runs.map((run, i) => <Run run={run} key={i} />)
     } else {
       return <LoadingIndicator />
     }
