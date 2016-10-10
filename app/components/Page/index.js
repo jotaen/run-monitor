@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import Run from '../run'
+import Run from '../Run'
 require('./style.scss')
 
 const LoadingIndicator = () => (

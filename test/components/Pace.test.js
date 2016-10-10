@@ -3,7 +3,7 @@
 import assert from 'assert'
 import React from 'react'
 import { shallow } from 'enzyme'
-import Pace from '../../app/components/pace'
+import Pace from '../../app/components/Pace'
 
 describe('<Pace />', () => {
   it('should have its rest position at 0 deg', () => {

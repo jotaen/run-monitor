@@ -1,11 +1,11 @@
 'use strict'
 
 import React from 'react'
-import Heading from './heading'
-import Distance from '../distance'
-import Pace from '../pace'
-import Intensity from '../intensity'
-import Time from '../time'
+import Heading from './Heading'
+import Distance from '../Distance'
+import Pace from '../Pace'
+import Intensity from '../Intensity'
+import Time from '../Time'
 require('./style.scss')
 
 const Run = ({run}) => (

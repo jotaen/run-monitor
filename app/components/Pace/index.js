@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import Label from '../label'
+import Label from '../Label'
 import { compose, multiply } from 'ramda'
 import { cutHigh, cutLow } from '../../lib/number'
 import { rotate } from '../../lib/styleProp'

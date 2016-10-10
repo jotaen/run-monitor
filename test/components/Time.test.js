@@ -3,7 +3,7 @@
 import assert from 'assert'
 import React from 'react'
 import { shallow } from 'enzyme'
-import Time from '../../app/components/time'
+import Time from '../../app/components/Time'
 
 describe('<Time />', () => {
   it('should have its rest position at 0 deg', () => {

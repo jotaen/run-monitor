@@ -3,7 +3,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const contentful = require('contentful')
-const Page = require('./components/page')
+const Page = require('./components/Page')
 const config = require('./config')
 const runify = require('./lib/runify')
 

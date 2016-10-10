@@ -3,7 +3,7 @@
 import assert from 'assert'
 import React from 'react'
 import { shallow } from 'enzyme'
-import Intensity from '../../app/components/intensity'
+import Intensity from '../../app/components/Intensity'
 
 describe('<Intensity />', () => {
   it('should display the percentage value correctly', () => {

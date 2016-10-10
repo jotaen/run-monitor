@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import Label from '../label'
+import Label from '../Label'
 import { fullPercent } from '../../lib/number'
 import { width } from '../../lib/styleProp'
 require('./style.scss')
