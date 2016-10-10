@@ -1,0 +1,15 @@
+@import '../../style.scss';
+
+.pace-speedometer {
+  border-color: $gray;
+  background-color: $gray-light;
+}
+
+.pace-arrow-needle { background-color: $blue-dark; }
+.pace-arrow-pointer { border-color: $blue-dark; }
+
+.pace-scale-tick1 { border-color: $red; }
+.pace-scale-tick2 { border-color: $orange; }
+.pace-scale-tick3 { border-color: $blue; }
+.pace-scale-tick4 { border-color: $green; }
+.pace-scale-tick5 { border-color: $green-dark; }

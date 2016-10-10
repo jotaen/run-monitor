@@ -1,6 +1,6 @@
 'use strict'
 
-const intensity = function (distance, pace) {
+const intensity = (distance, pace) => {
   return distance * Math.pow(pace, 2) / 100
 }
 

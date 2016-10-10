@@ -4,7 +4,7 @@ import React from 'react'
 import Speedometer from '../speedometer'
 
 class Run extends React.Component {
-  render() {
+  render () {
     return <Speedometer />
   }
 }

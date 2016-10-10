@@ -1,15 +1,15 @@
 'use strict'
 
-const path = require("path")
+const path = require('path')
 
 module.exports = {
   entry: {
-    app: ["./src/main.js"]
+    app: ['./app/main.js']
   },
   output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/assets/",
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/assets/',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
