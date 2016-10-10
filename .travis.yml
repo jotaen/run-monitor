@@ -1,0 +1,15 @@
+language: node_js
+script: npm run linter
+node_js:
+  - "6.0"
+
+after_success:
+  - npm run bundler:prod
+
+addons:
+  artifacts:
+    paths:
+      - ./index.html
+      - $(ls ./assets/* | tr "\n" ":")
+    target_paths:
+      - /
