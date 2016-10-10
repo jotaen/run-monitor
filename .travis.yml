@@ -1,5 +1,5 @@
 language: node_js
-script: npm run linter
+script: npm test
 node_js:
   - "6.0"
 
