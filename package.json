@@ -1,16 +1,10 @@
 {
-  "name": "react-webpack-etc",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "bundler": "webpack",
     "bundler:prod": "webpack --config webpack.production.config.js",
     "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
