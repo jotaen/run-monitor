@@ -1,7 +1,15 @@
+/* COLORS */
+
+$white: #ecf0f1;
+
+$yellow: #f1c40f;
+
 $gray: #95a5a6;
+$gray-dark: #7f8c8d;
 $gray-light: #e6e6e6;
 
 $blue-dark: #2c3e50;
+$blue-light: #eff5f9;
 
 $red: #e74c3c;
 
@@ -12,3 +20,18 @@ $blue: #3498db;
 $green: #2ecc71;
 
 $green-dark: #1abc9c;
+
+$purple: #9b59b6;
+$purple-light: #e6dcea;
+
+/* FONTS */
+
+$font-family: 'Catamaran', sans-serif;
+
+/* BASIC ELEMENTS */
+
+body {
+  font-family: $font-family;
+  margin: 0;
+  background-color: $blue-light;
+}

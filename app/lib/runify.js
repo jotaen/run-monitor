@@ -1,18 +1,21 @@
 'use strict'
 
-const intensity = (distance, pace) => {
-  return distance * Math.pow(pace, 2) / 100
-}
+import { compose, assoc } from 'ramda'
 
-module.exports = (item, target) => {
-  const targetPace = target.distance / (target.time / 60)
-  const targetIntensity = intensity(target.distance, targetPace)
+// intensity :: (Number, Number) -> Number
+const intensity = (distance, pace) => distance * Math.pow(pace, 2) / 100
 
-  const run = item.fields
-  run.date = new Date(run.date)
-  run.pace = run.distance / run.time * 60
-  run.targetPace = targetPace
-  run.intensity = intensity(run.distance, run.pace) / targetIntensity
-  run.extrapolatedTime = target.distance / run.pace * 60
-  return run
+// pace :: (Number, Number) -> Number
+const pace = (distance, time) => distance / (time / 60)
+
+module.exports = (data, target) => {
+  return compose(
+    (run) => assoc('intensity', intensity(run.distance, run.pace) / intensity(run.targetDistance, run.targetPace), run),
+    (run) => assoc('pace', pace(run.distance, run.time), run),
+    (run) => assoc('extrapolatedTime', pace(target.distance, run.pace), run),
+    (run) => assoc('targetPace', pace(target.distance, target.time), run),
+    (run) => assoc('targetDistance', target.distance, run),
+    (run) => assoc('targetTime', target.time, run),
+    (run) => assoc('date', new Date(run.date), run)
+  )(data)
 }
