@@ -12,10 +12,15 @@
   border-bottom: none;
 }
 
+.run__heading {
+  margin-bottom: 15px;
+}
+
 .run__widget {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
+  overflow: hidden;
   height: 160px;
   width: 224px;
   padding: 16px 48px;

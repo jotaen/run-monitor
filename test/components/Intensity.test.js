@@ -6,7 +6,7 @@ import { shallow } from 'enzyme'
 import Intensity from '../../app/components/intensity'
 
 describe('<Intensity />', () => {
-  it('should use the progress as width', () => {
+  it('should display the percentage value correctly', () => {
     const wrapper = shallow(<Intensity percentValue={0.25} />)
     const element = wrapper.find('.progressbar__gauge')
     assert.strictEqual(element.length, 1)

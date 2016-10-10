@@ -38,6 +38,12 @@ describe('#runify', () => {
     assert.strictEqual(result.pace.toFixed(2), expect.toFixed(2))
   })
 
+  it('should calculate the estimated time for the target distance', () => {
+    const result = runify(data(), target())
+    const expect = 132.42
+    assert.strictEqual(result.estimatedTime.toFixed(2), expect.toFixed(2))
+  })
+
   it('should append the target pace', () => {
     const result = runify(data(), target())
     const expect = 10.55

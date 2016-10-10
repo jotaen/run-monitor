@@ -17,7 +17,7 @@ const formatDate = (date) => {
 }
 
 const Heading = ({date, route}) => (
-  <div>
+  <div className='run__heading'>
     <div className='run__date'>{formatDate(date)}</div>
     <div className='run__route'>{route.join(' — ')}</div>
   </div>
