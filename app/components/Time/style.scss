@@ -1,16 +1,22 @@
 @import '../../style.scss';
 
 .pie {
-  width: 93px;
-  height: 93px;
+  margin-left: 15px;
+  width: 95px;
+  height: 95px;
+}
+
+.pie__container {
+  width: 100%;
+  height: 100%;
   transform: rotate(-90deg);
   border-radius: 50%;
+  background: $gray-medium;
 }
 
 .pie__fill {
-  fill: $gray-medium;
+  fill: transparent;
   stroke: $blue;
-  stroke-width: 32;
 }
 
 .label__time:after {

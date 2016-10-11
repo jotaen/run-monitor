@@ -2,14 +2,12 @@
 
 import React from 'react'
 import Label from '../Label'
-import { compose, multiply } from 'ramda'
-import { cutHigh, cutLow } from '../../lib/number'
-import { rotate } from '../../lib/styleProp'
+import { to90Degree } from '../../lib/number'
 require('./style.scss')
 
-const makeDegree = compose(multiply(90), cutHigh(1), cutLow(-1))
-
 const tickStyle = (degrees) => ({transform: `rotate(${degrees}deg)`})
+
+const rotateStyle = (value) => ({transform: `rotate(${value.toFixed(0)}deg)`})
 
 const scaledRelation = (actualValue, targetValue) => {
   const factor = 0.6
@@ -37,7 +35,7 @@ const Pace = ({actualValue, targetValue}) => {
       <Label value={targetValue.toFixed(1)} element='pace' modifier='target' />
       <div className='clock'>
         <Scale />
-        <div className='clock-needle' style={rotate(makeDegree(deviation))}>
+        <div className='clock-needle' style={rotateStyle(to90Degree(deviation))}>
           <div className='clock-needle__origin' />
           <div className='clock-needle__pointer' />
         </div>

@@ -3,8 +3,9 @@
 import React from 'react'
 import Label from '../Label'
 import { fullPercent } from '../../lib/number'
-import { width } from '../../lib/styleProp'
 require('./style.scss')
+
+const widthStyle = (value) => ({width: `${value.toFixed(0)}%`})
 
 const Intensity = ({percentValue}) => {
   const value = fullPercent(percentValue)
@@ -12,7 +13,7 @@ const Intensity = ({percentValue}) => {
     <div title='Intensity' className='run__widget'>
       <Label value={value.toFixed(0)} element='intensity' />
       <div className='progressbar'>
-        <div style={width(value)} className='progressbar__gauge' />
+        <div style={widthStyle(value)} className='progressbar__gauge' />
       </div>
     </div>
   )
