@@ -1,21 +1,16 @@
 @import '../../style.scss';
 
-.pie {
+.pie--time {
   margin-left: 15px;
   width: 95px;
   height: 95px;
 }
 
-.pie__container {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-  border-radius: 50%;
+.pie__void--time {
   background: $gray-medium;
 }
 
-.pie__fill {
-  fill: transparent;
+.pie__fill--time {
   stroke: $blue;
 }
 

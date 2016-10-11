@@ -1,20 +1,13 @@
 @import '../../style.scss';
 
-.donut {
+.pie--actualDistance, .pie--targetDistance {
   position: absolute;
   width: 132px;
   height: 132px;
 }
 
-.donut__container {
-  border-radius: 50%;
-  transform: rotate(-90deg);
-  fill: transparent;
-  stroke: $red;
-}
-
-.donut__container--target { stroke: $red; }
-.donut__container--actual { stroke: $green-pastell; }
+.pie__void--targetDistance { stroke: $red; }
+.pie__void--actualDistance { stroke: $green-pastell; }
 
 .label__distance:after {
   content: 'km';
