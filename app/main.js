@@ -8,13 +8,11 @@ const config = require('./config')
 const runify = require('./lib/runify')
 
 const fetchRuns = () => {
-  return new Promise((resolve, reject) => {
-    contentful.createClient(config.contentful).getEntries({
-      content_type: 'run',
-      order: '-fields.date' // reverse order
-    }).then((entries) => {
-      resolve(entries.items.map((item) => runify(item.fields, config.target)))
-    })
+  return contentful.createClient(config.contentful).getEntries({
+    content_type: 'run',
+    order: '-fields.date' // reverse order
+  }).then((entries) => {
+    return entries.items.map((item) => runify(item.fields, config.target))
   })
 }
 
