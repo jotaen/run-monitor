@@ -19,7 +19,7 @@ class Page extends React.Component {
     })
   }
 
-  mainBlock () {
+  renderMainBlock () {
     if (this.state && this.state.runs) {
       return this.state.runs.map((run, i) => <Run run={run} key={i} />)
     } else {
@@ -41,7 +41,7 @@ class Page extends React.Component {
           </div>
         </header>
         <main>
-          { this.mainBlock() }
+          { this.renderMainBlock() }
         </main>
       </div>
     )
