@@ -14,12 +14,12 @@ const LoadingIndicator = () => (
 
 class Page extends React.Component {
   componentDidMount () {
-    this.props.fetch().then((runs) => {
+    this.props.fetchRuns().then((runs) => {
       this.setState({runs})
     })
   }
 
-  mainBlock () {
+  renderMainBlock () {
     if (this.state && this.state.runs) {
       return this.state.runs.map((run, i) => <Run run={run} key={i} />)
     } else {
@@ -41,7 +41,7 @@ class Page extends React.Component {
           </div>
         </header>
         <main>
-          { this.mainBlock() }
+          { this.renderMainBlock() }
         </main>
       </div>
     )
@@ -50,7 +50,7 @@ class Page extends React.Component {
 
 Page.propTypes = {
   // fetch: a function that returns a Promise
-  fetch: React.PropTypes.func.isRequired
+  fetchRuns: React.PropTypes.func.isRequired
 }
 
 module.exports = Page

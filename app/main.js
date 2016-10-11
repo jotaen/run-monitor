@@ -7,15 +7,13 @@ const Page = require('./components/Page')
 const config = require('./config')
 const runify = require('./lib/runify')
 
-const callApi = () => {
-  return new Promise((resolve, reject) => {
-    contentful.createClient(config.contentful).getEntries({
-      content_type: 'run',
-      order: '-fields.date' // reverse order
-    }).then((entries) => {
-      resolve(entries.items.map((item) => runify(item.fields, config.target)))
-    })
+const fetchRuns = () => {
+  return contentful.createClient(config.contentful).getEntries({
+    content_type: 'run',
+    order: '-fields.date' // reverse order
+  }).then((entries) => {
+    return entries.items.map((item) => runify(item.fields, config.target))
   })
 }
 
-ReactDOM.render(<Page fetch={callApi} />, document.getElementById('app'))
+ReactDOM.render(<Page fetchRuns={fetchRuns} />, document.getElementById('app'))
