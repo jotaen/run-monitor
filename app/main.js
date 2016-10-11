@@ -7,7 +7,7 @@ const Page = require('./components/Page')
 const config = require('./config')
 const runify = require('./lib/runify')
 
-const callApi = () => {
+const fetchRuns = () => {
   return new Promise((resolve, reject) => {
     contentful.createClient(config.contentful).getEntries({
       content_type: 'run',
@@ -18,4 +18,4 @@ const callApi = () => {
   })
 }
 
-ReactDOM.render(<Page fetch={callApi} />, document.getElementById('app'))
+ReactDOM.render(<Page fetchRuns={fetchRuns} />, document.getElementById('app'))
